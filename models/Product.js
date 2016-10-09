@@ -3,14 +3,14 @@ var sq = require('./db'),
     Sequelize = require('sequelize');
 
 var Product = sq.define('product', {
-	name: {
-		type: Sequelize.DataTypes.STRING,
-		field: 'name'
-	},
-	description: {
-		type: Sequelize.DataTypes.TEXT,
-		field: 'description'
-	}
+    name: {
+        type: Sequelize.DataTypes.STRING,
+        field: 'name'
+    },
+    description: {
+        type: Sequelize.DataTypes.TEXT,
+        field: 'description'
+    }
 });
 
 Category.hasOne(Product);

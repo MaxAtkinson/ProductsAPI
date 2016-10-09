@@ -1,11 +1,11 @@
 [
-	{
-		"name": "Beers"
-	},
-	{
-		"name": "Cocktails"
-	},
-	{
-		"name": "Wines"
-	}
+    {
+        "name": "Beers"
+    },
+    {
+        "name": "Cocktails"
+    },
+    {
+        "name": "Wines"
+    }
 ]

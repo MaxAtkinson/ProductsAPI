@@ -25,7 +25,7 @@
 ### Categories
 
 - Create category:
-`curl -H 'Content-Type: application/json' -X POST -d '{"name": "Whisky"}' http://localhost:5000/categories
+`curl -H 'Content-Type: application/json' -X POST -d '{"name": "Whisky"}' http://localhost:5000/categories`
 
 - Get categories:
 `curl http://localhost:5000/categories`
