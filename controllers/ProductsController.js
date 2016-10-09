@@ -4,17 +4,27 @@ var express = require('express'),
 var ProductsController = express.Router();
 
 ProductsController.get('/', (req, res, next) => {
-	Product.findOne({}).then((product) => {
-		res.json(product);
+	Product.findAll().then((products) => {
+		res.json(products);
 	});
 });
 
 ProductsController.post('/', (req, res, next) => {
-    res.json({});
+    var productData = req.body;
+
+    Product.create(productData).then(() => {
+    	res.json({'msg': 'Product added.'});
+    });
 });
 
 ProductsController.delete('/:id', (req, res, next) => {
-    res.json({});
+	var query = {
+		where: { id: req.params.id }
+	};
+
+    Product.destroy(query).then(() => {
+    	res.json({'msg': 'Product Deleted.'});
+    });
 });
 
 module.exports = ProductsController;
