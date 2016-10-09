@@ -1,7 +1,6 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    path = require('path'),
     ProductsController = require('./controllers/ProductsController'),
     CategoriesController = require('./controllers/CategoriesController');
 
