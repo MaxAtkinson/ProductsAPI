@@ -2,6 +2,7 @@ var sq = require('./db'),
     Category = require('./Category'),
     Sequelize = require('sequelize');
 
+// Product model with fields 'id', 'name' and 'categoryId'
 var Product = sq.define('product', {
     name: {
         type: Sequelize.DataTypes.STRING,
@@ -13,5 +14,7 @@ var Product = sq.define('product', {
     }
 });
 
+// ORM relationship
 Category.hasOne(Product);
+
 module.exports = Product;

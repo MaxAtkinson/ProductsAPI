@@ -1,14 +1,17 @@
 var express = require('express'),
     Product = require('../models/Product');
 
+// Init new router
 var ProductsController = express.Router();
 
+// GET all products
 ProductsController.get('/', (req, res, next) => {
     Product.findAll().then((products) => {
         res.json(products);
     });
 });
 
+// POST a new product
 ProductsController.post('/', (req, res, next) => {
     Product.create(req.body).then((product) => {
         res.json({
@@ -21,6 +24,7 @@ ProductsController.post('/', (req, res, next) => {
     });
 });
 
+// DELETE a product
 ProductsController.delete('/:id', (req, res, next) => {
     var query = {
         where: { id: req.params.id }
