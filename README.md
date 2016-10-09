@@ -12,24 +12,24 @@
 
 ### Products
 
+- Create product:
+`curl -H 'Content-Type: application/json' -X POST -d '{"name": "Buckfast Tonic Wine", "description": "The finest of tonic wines", "categoryId": "3"}' http://localhost:5000/products`
+
 - Get products:
 `curl http://localhost:5000/products`
 
-- Post product:
-`curl -H 'Content-Type: application/json' -X POST -d '{"name": "product_name", "description": "product_description", "category": "product_category"}' http://localhost:5000/products`
-
 - Delete product:
-`curl -H 'Content-Type: application/json' -X DELETE http://localhost:5000/products/<ID>`
+`curl -H 'Content-Type: application/json' -X DELETE http://localhost:5000/products/11`
 
 
 ### Categories
 
+- Create category:
+`curl -H 'Content-Type: application/json' -X POST -d '{"name": "Whisky"}' http://localhost:5000/categories
+
 - Get categories:
 `curl http://localhost:5000/categories`
 
-- Post category:
-`curl -H 'Content-Type: application/json' -X POST -d '{"name", "category_name"}' http://localhost:5000/categories`
-
 - Get products for a specific category:
-`curl http://localhost:5000/categories/<ID>/products`
+`curl http://localhost:5000/categories/3/products`
 

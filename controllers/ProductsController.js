@@ -10,8 +10,11 @@ ProductsController.get('/', (req, res, next) => {
 });
 
 ProductsController.post('/', (req, res, next) => {
-    Product.create(req.body).then(() => {
-    	res.json({ 'msg': 'Product added.' });
+    Product.create(req.body).then((product) => {
+    	res.json({
+            'msg': 'Product added.',
+            'product': product
+        });
     }).catch((err) => {
     	res.status(400);
     	res.json({ 'msg': err.message });

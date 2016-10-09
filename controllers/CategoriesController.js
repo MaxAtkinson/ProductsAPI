@@ -12,7 +12,7 @@ CategoriesController.get('/', (req, res, next) => {
 
 CategoriesController.get('/:id/products', (req, res, next) => {
 	var query = {
-		where: { category: req.params.id }
+		where: { categoryId: req.params.id }
 	};
 
     Product.find(query).then((products) => {
