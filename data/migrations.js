@@ -1,7 +1,13 @@
+/*
+    To be run from the project root.
+
+    May throw an error due to dropping tables which don't 
+    exist due to { force: true } below -- ignore these!
+*/
 var fs = require('fs'),
-    sq = require('./models/db'),
-    Product = require('./models/Product'),
-    Category = require('./models/Category');
+    sq = require('../models/db'),
+    Product = require('../models/Product'),
+    Category = require('../models/Category');
 
 sq.sync({ force: true }).then( () => {
     var categoryData = fs.readFileSync('./data/categories.json', 'utf8');
