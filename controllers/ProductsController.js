@@ -10,10 +10,11 @@ ProductsController.get('/', (req, res, next) => {
 });
 
 ProductsController.post('/', (req, res, next) => {
-    var productData = req.body;
-
-    Product.create(productData).then(() => {
-    	res.json({'msg': 'Product added.'});
+    Product.create(req.body).then(() => {
+    	res.json({ 'msg': 'Product added.' });
+    }).catch((err) => {
+    	res.status(400);
+    	res.json({ 'msg': err.message });
     });
 });
 
@@ -23,7 +24,7 @@ ProductsController.delete('/:id', (req, res, next) => {
 	};
 
     Product.destroy(query).then(() => {
-    	res.json({'msg': 'Product Deleted.'});
+    	res.json({ 'msg': 'Product Deleted.' });
     });
 });
 

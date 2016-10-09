@@ -16,10 +16,10 @@
 `curl http://localhost:5000/products`
 
 - Post product:
-`curl -H 'application/json' -X POST -d '{"name": "product_name", "description": "product_description", "category": "product_category"}' http://localhost:5000/products`
+`curl -H 'Content-Type: application/json' -X POST -d '{"name": "product_name", "description": "product_description", "category": "product_category"}' http://localhost:5000/products`
 
 - Delete product:
-`curl -H 'application/json' -X DELETE http://localhost:5000/products/<ID>`
+`curl -H 'Content-Type: application/json' -X DELETE http://localhost:5000/products/<ID>`
 
 
 ### Categories
@@ -28,7 +28,7 @@
 `curl http://localhost:5000/categories`
 
 - Post category:
-`curl -H 'application/json' -X POST -d '{"name", "category_name"}' http://localhost:5000/categories`
+`curl -H 'Content-Type: application/json' -X POST -d '{"name", "category_name"}' http://localhost:5000/categories`
 
 - Get products for a specific category:
 `curl http://localhost:5000/categories/<ID>/products`

@@ -10,7 +10,6 @@ app.set('ip', '127.0.0.1');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use('/products', ProductsController);
 app.use('/categories', CategoriesController);
 

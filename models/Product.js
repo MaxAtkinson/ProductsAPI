@@ -10,15 +10,8 @@ var Product = sq.define('product', {
 	description: {
 		type: Sequelize.DataTypes.TEXT,
 		field: 'description'
-	},
-	category: {
-		type: Sequelize.DataTypes.STRING,
-		field: 'category',
-		references: {
-			model: Category,
-			key: 'name'
-		}
 	}
 });
 
+Category.hasOne(Product);
 module.exports = Product;

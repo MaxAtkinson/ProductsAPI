@@ -4,8 +4,7 @@ var sq = require('./db'),
 var Category = sq.define('category', {
 	name: {
 		type: Sequelize.DataTypes.STRING,
-		field: 'name',
-		primaryKey: true
+		field: 'name'
 	}
 });
 

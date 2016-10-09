@@ -1,6 +1,6 @@
 var express = require('express'),
     Category = require('../models/Category'),
-    Products = require('../models/Product');
+    Product = require('../models/Product');
 
 var CategoriesController = express.Router();
 
@@ -12,7 +12,7 @@ CategoriesController.get('/', (req, res, next) => {
 
 CategoriesController.get('/:id/products', (req, res, next) => {
 	var query = {
-		where: { id: req.params.id }
+		where: { category: req.params.id }
 	};
 
     Product.find(query).then((products) => {
@@ -21,7 +21,15 @@ CategoriesController.get('/:id/products', (req, res, next) => {
 });
 
 CategoriesController.post('/', (req, res, next) => {
-    res.json({});
+    Category.create(req.body).then((category) =>{
+    	res.json({
+    		'msg': 'Category created.',
+    		'category': category
+    	});
+    }).catch((err) => {
+    	res.status(400);
+    	res.json({ 'msg': err.message });
+    });
 });
 
 module.exports = CategoriesController;
